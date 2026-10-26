@@ -7,6 +7,8 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/tlg-favicon-32.png">
 <link rel="stylesheet" href="/assets/site.css">
+<meta name="meta-pixel-id" content="{{META_PIXEL_ID}}">
+<script src="/assets/track.js" defer></script>
 </head>
 <body>
 
@@ -238,7 +240,10 @@
     fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
       .then(function (res) { return res.json().catch(function () { return { ok: false }; }); })
       .then(function (out) {
-        if (out && out.ok) return route();
+        if (out && out.ok) {
+          if (window.tlgTrack) window.tlgTrack(out.route === 'review' ? 'Lead' : 'ApplicationRouted', { route: out.route });
+          return route();
+        }
         if (out && out.error === 'invalid') return fail('Some answers need another look. Please check the form and try again.');
         fail('Something went wrong sending your application. Please try again in a moment.');
       })
