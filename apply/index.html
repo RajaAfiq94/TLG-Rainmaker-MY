@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for a Founding Seat | TLG R(AI)nmaker MY</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/tlg-favicon-32.png">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="topbar-logo"><img src="/assets/tlg-logo-horizontal.svg" alt="TLG R(AI)nmaker, AI Marketing OS" width="220" height="52"></a>
+  </div>
+</header>
+
+<!-- SECTION 1: Briefing header -->
+<section style="padding-top: 72px; padding-bottom: 40px;">
+  <div class="wrap center" style="max-width: 752px;">
+    <div class="eyebrow">Founding cohort: 5 clinics</div>
+    <h1>Apply for one of <span class="hl">5</span> founding seats</h1>
+    <p class="lead" style="margin-top: 24px;">This short application helps me understand your clinic before we speak, so the call is useful even if the full build isn't right for you. It takes about 3 minutes. I read every application myself.</p>
+  </div>
+</section>
+
+<!-- SECTION 2: Intake form card. Replace with the native GHL form embed before launch; keep these fields and labels verbatim. -->
+<section style="padding-top: 0;" id="form-section">
+  <div class="wrap">
+    <form class="form-card" id="apply" novalidate>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">1</span><span class="qt">Your details.</span></legend>
+        <div class="field" data-req><label for="f-name">Name</label><input type="text" id="f-name" name="name" autocomplete="name"><p class="err">Please add your name.</p></div>
+        <div class="field" data-req data-type="email"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email"><p class="err">Please add a valid email.</p></div>
+        <div class="field" data-req><label for="f-wa">WhatsApp number</label><input type="tel" id="f-wa" name="whatsapp" autocomplete="tel" placeholder="+60"><p class="err">Please add your WhatsApp number.</p></div>
+        <div class="field" data-req><label for="f-clinic">Clinic name and area</label><input type="text" id="f-clinic" name="clinic"><p class="err">Please add your clinic name and area.</p></div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">2</span><span class="qt">Your practice.</span></legend>
+        <div class="field" data-req data-group="profession">
+          <p class="sub-q" style="margin-top: 0;">Are you a doctor or a dentist?</p>
+          <div class="tiles cols-2">
+            <label class="tile"><input type="radio" name="profession" value="Doctor"><span class="dot"></span>Doctor</label>
+            <label class="tile"><input type="radio" name="profession" value="Dentist"><span class="dot"></span>Dentist</label>
+          </div>
+          <p class="err">Please choose one.</p>
+        </div>
+        <div class="field" data-req data-group="role">
+          <p class="sub-q">And which fits you best?</p>
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="role" value="I own the clinic"><span class="dot"></span>I own the clinic</label>
+            <label class="tile"><input type="radio" name="role" value="I don't own it, but I decide its marketing"><span class="dot"></span>I don't own it, but I decide its marketing</label>
+            <label class="tile"><input type="radio" name="role" value="A healthcare group decides the marketing"><span class="dot"></span>A healthcare group decides the marketing</label>
+          </div>
+          <p class="err">Please choose one.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">3</span><span class="qt">How far ahead are you booked right now?</span></legend>
+        <div class="field" data-req data-group="booked">
+          <div class="tiles cols-2">
+            <label class="tile"><input type="radio" name="booked" value="Same week"><span class="dot"></span>Same week</label>
+            <label class="tile"><input type="radio" name="booked" value="1 to 4 weeks"><span class="dot"></span>1 to 4 weeks</label>
+            <label class="tile"><input type="radio" name="booked" value="1 to 3 months"><span class="dot"></span>1 to 3 months</label>
+            <label class="tile"><input type="radio" name="booked" value="More than 3 months"><span class="dot"></span>More than 3 months</label>
+          </div>
+          <p class="err">Please choose one.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">4</span><span class="qt">Roughly how many patients do you see a day, and where do most new patients come from today?</span></legend>
+        <div class="field" data-req><label for="f-ppd">Patients a day</label><input type="number" id="f-ppd" name="patients_per_day" min="0" inputmode="numeric" style="max-width: 200px;"><p class="err">Please add a rough number.</p></div>
+        <div class="field" data-req data-group="sources">
+          <p class="sub-q">Where do most new patients come from today?</p>
+          <div class="tiles cols-2">
+            <label class="tile"><input type="checkbox" name="sources" value="Referrals"><span class="dot sq"></span>Referrals</label>
+            <label class="tile"><input type="checkbox" name="sources" value="Insurance panels"><span class="dot sq"></span>Insurance panels</label>
+            <label class="tile"><input type="checkbox" name="sources" value="Google search"><span class="dot sq"></span>Google search</label>
+            <label class="tile"><input type="checkbox" name="sources" value="Walk-ins"><span class="dot sq"></span>Walk-ins</label>
+            <label class="tile"><input type="checkbox" name="sources" value="Social media"><span class="dot sq"></span>Social media</label>
+            <label class="tile"><input type="checkbox" name="sources" value="Other"><span class="dot sq"></span>Other</label>
+          </div>
+          <p class="err">Please tick at least one.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">5</span><span class="qt">What have you tried for marketing so far, and what happened?</span></legend>
+        <div class="field" data-req>
+          <p class="helper" style="margin-top: 0;">Short answer. “Nothing yet” is a fine answer.</p>
+          <textarea id="f-tried" name="tried" aria-label="What have you tried for marketing so far, and what happened?"></textarea>
+          <p class="err">A short answer is fine.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">6</span><span class="qt">If your clinic had a second front door you owned, what would that change for you over the next 12 months?</span></legend>
+        <div class="field" data-req>
+          <textarea id="f-change" name="change_12_months" aria-label="What would a second front door change for you over the next 12 months?"></textarea>
+          <p class="err">A short answer is fine.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="q-block">
+        <legend class="q-head"><span class="qn">7</span><span class="qt">The founding build is MYR 12,500, one time. If we both agree it's a fit, are you in a position to start within the next 30 days?</span></legend>
+        <div class="field" data-req data-group="ready">
+          <div class="tiles">
+            <label class="tile"><input type="radio" name="ready" value="Yes"><span class="dot"></span>Yes</label>
+            <label class="tile"><input type="radio" name="ready" value="Yes, after I discuss it with a partner"><span class="dot"></span>Yes, after I discuss it with a partner</label>
+            <label class="tile"><input type="radio" name="ready" value="Not right now"><span class="dot"></span>Not right now</label>
+          </div>
+          <p class="err">Please choose one.</p>
+        </div>
+      </fieldset>
+
+      <div class="field" data-req data-group="consent" style="margin: 8px 0 28px;">
+        <label class="consent"><input type="checkbox" name="consent" value="yes"><span>I agree to TLG R(AI)nmaker MY using these details to reply to my application and contact me about the call. I can ask for my details to be removed at any time. <a href="{{PRIVACY_NOTICE_URL}}">Privacy notice</a></span></label>
+        <p class="err">Please tick to agree so we can reply to you.</p>
+      </div>
+
+      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-primary btn-block" type="submit" id="submit-btn"><span class="main">Apply for a founding seat</span></button>
+      <p class="submit-error" id="submit-error" role="alert" hidden></p>
+      <p class="dev-note" id="dev-note" hidden></p>
+    </form>
+  </div>
+</section>
+
+<!-- SECTION 3: What happens next (below the form, and the on-submit confirmation state) -->
+<section style="padding-top: 0;" id="next">
+  <div class="wrap">
+    <div class="next-block">
+      <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg>
+      <h3>What happens next</h3>
+      <p>I'll read your application and reply on WhatsApp within {{REPLY_TIME}}. If it looks like a fit, I'll send you a time for a 30-minute call.</p>
+      <p>The call is a conversation about where your patients come from today, and whether a second front door makes sense for your clinic. If it doesn't, I'll tell you, and point you to something that fits better.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/tlg-logo-stacked.svg" alt="TLG R(AI)nmaker" width="120" height="137">
+    <div class="links"><span>© TLG R(AI)nmaker MY</span><a href="{{PRIVACY_NOTICE_URL}}">Privacy notice</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Fill these before launch. While they still hold {{...}}, the page shows a note instead of redirecting.
+  var RA_PACK_URL = '{{RA_PACK_URL}}';
+  var NOT_NOW_URL = '{{NOT_NOW_URL}}';
+  var API_URL = '/api/apply'; // Vercel function that sends the application to GoHighLevel.
+
+  var form = document.getElementById('apply');
+  var fields = Array.prototype.slice.call(form.querySelectorAll('[data-req]'));
+
+  function filled(f) {
+    if (f.dataset.group) return !!f.querySelector('input:checked');
+    var el = f.querySelector('input, textarea');
+    var v = el.value.trim();
+    if (!v) return false;
+    if (f.dataset.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    return true;
+  }
+
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest('[data-req]');
+    if (f && f.classList.contains('invalid') && filled(f)) f.classList.remove('invalid');
+  });
+  form.addEventListener('change', function (e) {
+    var f = e.target.closest('[data-req]');
+    if (f && f.classList.contains('invalid') && filled(f)) f.classList.remove('invalid');
+  });
+
+  function go(url) {
+    if (url.indexOf('{{') === 0) {
+      var n = document.getElementById('dev-note');
+      n.hidden = false;
+      n.textContent = 'Preview: this answer redirects to ' + url + ' once that URL is filled in.';
+      return;
+    }
+    window.location.href = url;
+  }
+
+  function showConfirmation() {
+    document.getElementById('form-section').hidden = true;
+    var next = document.getElementById('next');
+    next.style.paddingTop = '24px';
+    next.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var first = null;
+    fields.forEach(function (f) {
+      var ok = filled(f);
+      f.classList.toggle('invalid', !ok);
+      if (!ok && !first) first = f;
+    });
+    if (first) {
+      first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var el = first.querySelector('input, textarea');
+      if (el) el.focus({ preventScroll: true });
+      return;
+    }
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) {
+      if (k === 'sources') (data.sources = data.sources || []).push(v); else data[k] = v;
+    });
+
+    var route = function () {
+      if (data.role === 'A healthcare group decides the marketing') return go(RA_PACK_URL);
+      if (data.booked === 'More than 3 months') return go(NOT_NOW_URL);
+      showConfirmation();
+    };
+
+    var btn = document.getElementById('submit-btn');
+    var errBox = document.getElementById('submit-error');
+    var label = btn.querySelector('.main');
+    errBox.hidden = true;
+    btn.disabled = true;
+    label.textContent = 'Sending your application...';
+
+    var fail = function (msg) {
+      btn.disabled = false;
+      label.textContent = 'Apply for a founding seat';
+      errBox.textContent = msg;
+      errBox.hidden = false;
+    };
+
+    fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      .then(function (res) { return res.json().catch(function () { return { ok: false }; }); })
+      .then(function (out) {
+        if (out && out.ok) return route();
+        if (out && out.error === 'invalid') return fail('Some answers need another look. Please check the form and try again.');
+        fail('Something went wrong sending your application. Please try again in a moment.');
+      })
+      .catch(function () { fail('We could not reach the server. Please check your connection and try again.'); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're Booked | TLG R(AI)nmaker MY</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/tlg-favicon-32.png">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="topbar-logo"><img src="/assets/tlg-logo-horizontal.svg" alt="TLG R(AI)nmaker, AI Marketing OS" width="220" height="52"></a>
+  </div>
+</header>
+
+<!-- SECTION 1: Confirmation banner -->
+<section class="band" style="padding-top: 72px;">
+  <div class="wrap center" style="max-width: 832px;">
+    <svg class="icon-check" aria-hidden="true"><use href="/assets/icons.svg#check"/></svg>
+    <h1>You're <span class="hl">booked</span>. Here's how to make the most of your call.</h1>
+    <div class="text-col" style="margin-top: 28px;">
+      <p class="lead">Thank you, Dr {{contact.name}}. Your call is in the calendar, and a confirmation is on its way to your email and WhatsApp.</p>
+      <p class="lead">The call is 30 minutes. We'll look at where your new patients come from today, what you've tried, and whether The Leverage R(AI)nmaker fits your clinic. You'll leave with a clear next step either way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Pre-call video -->
+<section>
+  <div class="wrap reveal" style="max-width: 792px;">
+    <div class="eyebrow">A 90-second note from Afiq</div>
+    <div class="video">
+      <span class="chip">Turn sound on</span>
+      <span class="placeholder">{{PRECALL_VIDEO}}</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Three things before the call -->
+<section class="light">
+  <div class="wrap">
+    <p class="lead center reveal" style="margin-bottom: 40px;">Before the call, please do three things. They take about ten minutes, and they make the call far more useful:</p>
+    <div class="grid-3" data-stagger>
+      <div class="card"><div class="num sm">01</div><p>Write down ten questions patients ask you every single week. These are the start of your teaching content.</p></div>
+      <div class="card"><div class="num sm">02</div><p>List the insurance panels you're on and the payment methods you accept.</p></div>
+      <div class="card"><div class="num sm">03</div><p>Have a rough number for what you spend on marketing a month today, even if it's zero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: What not to do -->
+<section>
+  <div class="wrap reveal">
+    <div class="panel" style="max-width: 680px;">
+      <h3 style="margin-bottom: 20px;">What not to do</h3>
+      <ul class="checks x">
+        <li><svg aria-hidden="true"><use href="/assets/icons.svg#x"/></svg><span>Don't worry about knowing anything about AI. You don't need to.</span></li>
+        <li><svg aria-hidden="true"><use href="/assets/icons.svg#x"/></svg><span>Don't prepare slides or numbers beyond the three items above.</span></li>
+        <li><svg aria-hidden="true"><use href="/assets/icons.svg#x"/></svg><span>Don't take the call between patients if you can avoid it. Thirty quiet minutes is enough.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: Footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/tlg-logo-stacked.svg" alt="TLG R(AI)nmaker" width="120" height="137">
+    <div class="links"><span>© TLG R(AI)nmaker MY</span><a href="{{PRIVACY_NOTICE_URL}}">Privacy notice</a></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
