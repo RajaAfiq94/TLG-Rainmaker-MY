@@ -145,6 +145,21 @@
   </div>
 </section>
 
+<!-- SECTION 4: Not-now state (booked more than 3 months out). Shown instead of "What happens next". -->
+<section style="padding-top: 24px;" id="not-now" hidden>
+  <div class="wrap">
+    <div class="next-block">
+      <h3>Thank you. Your clinic is busy, and that's a good problem.</h3>
+      <p>With your diary full more than three months ahead, the founding build isn't the right fit right now. I've kept your application, so we can talk when that changes.</p>
+      <p>In the meantime, I write a short newsletter on AI and marketing for clinics. Plain, practical, inside the rules. Would you like it?</p>
+      <button class="btn btn-primary" type="button" id="nl-btn"><span class="main">Yes, send me the newsletter</span></button>
+      <p class="helper" style="margin-top: 12px;">By clicking, you agree to receive the newsletter by email. Every issue has an unsubscribe link.</p>
+      <p class="submit-error" id="nl-error" role="alert" hidden></p>
+      <p id="nl-done" hidden><b>You're on the list.</b> The first issue is on its way.</p>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap">
     <img src="/assets/tlg-logo-stacked.svg" alt="TLG R(AI)nmaker" width="120" height="137">
@@ -154,9 +169,6 @@
 
 <script>
 (function () {
-  // Fill these before launch. While they still hold {{...}}, the page shows a note instead of redirecting.
-  var RA_PACK_URL = '{{RA_PACK_URL}}';
-  var NOT_NOW_URL = '{{NOT_NOW_URL}}';
   var API_URL = '/api/apply'; // Vercel function that sends the application to GoHighLevel.
 
   var form = document.getElementById('apply');
@@ -180,22 +192,34 @@
     if (f && f.classList.contains('invalid') && filled(f)) f.classList.remove('invalid');
   });
 
-  function go(url) {
-    if (url.indexOf('{{') === 0) {
-      var n = document.getElementById('dev-note');
-      n.hidden = false;
-      n.textContent = 'Preview: this answer redirects to ' + url + ' once that URL is filled in.';
-      return;
-    }
-    window.location.href = url;
-  }
-
   function showConfirmation() {
     document.getElementById('form-section').hidden = true;
     var next = document.getElementById('next');
     next.style.paddingTop = '24px';
     next.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  function showNotNow() {
+    document.getElementById('form-section').hidden = true;
+    document.getElementById('next').hidden = true;
+    var nn = document.getElementById('not-now');
+    nn.hidden = false;
+    nn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  var lastEmail = '';
+  document.getElementById('nl-btn').addEventListener('click', function () {
+    var btn = this, err = document.getElementById('nl-error');
+    err.hidden = true;
+    btn.disabled = true;
+    fetch('/api/newsletter', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: lastEmail, newsletter_consent: 'yes' }) })
+      .then(function (res) { return res.json().catch(function () { return { ok: false }; }); })
+      .then(function (out) {
+        if (out && out.ok) { btn.hidden = true; document.getElementById('nl-done').hidden = false; return; }
+        btn.disabled = false; err.textContent = 'Something went wrong. Please try again in a moment.'; err.hidden = false;
+      })
+      .catch(function () { btn.disabled = false; err.textContent = 'We could not reach the server. Please try again.'; err.hidden = false; });
+  });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -217,12 +241,14 @@
       if (k === 'sources') (data.sources = data.sources || []).push(v); else data[k] = v;
     });
 
-    var route = function () {
-      if (data.role === 'A healthcare group decides the marketing') return go(RA_PACK_URL);
-      if (data.booked === 'More than 3 months') return go(NOT_NOW_URL);
+    // Group-employed doctors still book a call (Referral & Authority Pack is offered on the call).
+    // Doctors booked more than 3 months out are offered the newsletter instead.
+    var route = function (r) {
+      if (r === 'not-now') return showNotNow();
       showConfirmation();
     };
 
+    lastEmail = data.email || '';
     var btn = document.getElementById('submit-btn');
     var errBox = document.getElementById('submit-error');
     var label = btn.querySelector('.main');
@@ -241,8 +267,8 @@
       .then(function (res) { return res.json().catch(function () { return { ok: false }; }); })
       .then(function (out) {
         if (out && out.ok) {
-          if (window.tlgTrack) window.tlgTrack(out.route === 'review' ? 'Lead' : 'ApplicationRouted', { route: out.route });
-          return route();
+          if (window.tlgTrack) window.tlgTrack(out.route === 'not-now' ? 'ApplicationRouted' : 'Lead', { route: out.route });
+          return route(out.route);
         }
         if (out && out.error === 'invalid') return fail('Some answers need another look. Please check the form and try again.');
         fail('Something went wrong sending your application. Please try again in a moment.');
