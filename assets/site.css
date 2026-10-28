@@ -45,6 +45,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img, svg { display: block; max-width: 100%; }
+img { height: auto; }
 a { color: inherit; }
 p { margin: 0 0 16px; }
 p:last-child { margin-bottom: 0; }
